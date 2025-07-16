@@ -1,0 +1,4 @@
+| NAME                | Expression                                                                                                                                                                         | FormatString       |
+| ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ |
+| % Quejas Rechazadas | DIVIDE(<br>    CALCULATE(COUNTROWS(BD_QuejasCongelados), BD_QuejasCongelados[SE RECHAZÓ?] = "SI"),<br>    COUNTROWS(BD_QuejasCongelados),<br>    0<br>)                            | 0\\ %;-0\\ %;0\\ % |
+| FilasConDatos       | COUNTROWS(<br>    FILTER(<br>        BD_QuejasCongelados,<br>        NOT(ISBLANK(BD_QuejasCongelados[MOTIVO])) &&<br>        TRIM(BD_QuejasCongelados[MOTIVO]) <> ""<br>    )<br>) | 0                  |
